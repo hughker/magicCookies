@@ -1,0 +1,20 @@
+{% case template %}
+  {% when 'collection' %}
+    {{ 'js.cookie.min.js' | asset_url | script_tag }}
+    <script type="text/javascript">
+      var magicCookies = Cookies.noConflict();
+      magicCookies.set('collection', '{{ collection.handle }}');
+    </script>
+  {% when 'cart' %}
+    {{ 'js.cookie.min.js' | asset_url | script_tag }}
+    <script type="text/javascript">
+      var magicCookies = Cookies.noConflict();
+      var magicCookiesCollecton = magicCookies.get('collection');
+      $('a').each(function() {
+        var value = $(this).attr('href');
+        if (value == '\/collections\/all') {
+          $(this).attr('href', '\/collections\/' + [magicCookiesCollecton]);
+        }
+      });
+    </script>
+{% endcase %}
