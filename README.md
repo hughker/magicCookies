@@ -8,7 +8,7 @@ aka. return to collection you added product to cart from
 If you'd like to have your Customer return from their Cart to the Collection page they lst visited, this will do the trick.
 
 ## Installation
-Add the following include at the bottom of your `theme.liquid` Template:
+Add `class="continue-shopping"` ro relevant links in your `cart.liquid` Template and then add the following include at the bottom of your `theme.liquid` Template:
 ```html
 {% include 'magicCookies' %}
 ```
@@ -45,6 +45,9 @@ With:
 ```html
 {{ 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.3/js.cookie.min.js' | script_tag }}
 ```
+
+## Dependencies
+* [JavaScript Cookie v2.0.3](https://github.com/js-cookie/js-cookie)
 
 ## Contributing
 Have something you want to add or remove? Please feel free to submit a pull request, I'd be more than happy to review and accept.
