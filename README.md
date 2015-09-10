@@ -5,10 +5,10 @@ aka. return to collection you added product to cart from
 - Rewrites all `/collections/all` links to `/collections/PreviousCollectionHandle` (see [Caveats](#caveats))
 
 ## What does it do?
-If you'd like to have your Customer return from their Cart to the Collection page they lst visited, this will do the trick.
+If you'd like to have your Customer return from their Cart to the Collection page they last visited, this will do the trick.
 
 ## Installation
-Add `class="continue-shopping"` ro relevant links in your `cart.liquid` Template and then add the following include at the bottom of your `theme.liquid` Template:
+Add `class="continue-shopping"` to relevant links in your `cart.liquid` Template and then add the following include at the bottom of your `theme.liquid` Template:
 ```html
 {% include 'magicCookies' %}
 ```
