@@ -2,7 +2,6 @@
 aka. return to collection you added product to cart from
 - Uses [JavaScript Cookie](https://github.com/js-cookie/js-cookie)
 - Sets `magicCookies` as the _`.noConflict`_ namespace (see [here](https://github.com/js-cookie/js-cookie#namespace-conflicts))
-- Rewrites all `/collections/all` links to `/collections/PreviousCollectionHandle` (see [Caveats](#caveats))
 
 ## What does it do?
 If you'd like to have your Customer return from their Cart to the Collection page they last visited, this will do the trick.
