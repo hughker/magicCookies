@@ -10,11 +10,6 @@
     <script type="text/javascript">
       var magicCookies = Cookies.noConflict();
       var magicCookiesCollecton = magicCookies.get('collection');
-      $('a').each(function() {
-        var value = $(this).attr('href');
-        if (value == '\/collections\/all') {
-          $(this).attr('href', '\/collections\/' + [magicCookiesCollecton]);
-        }
-      });
+      $('.continue-shopping').attr('href', '\/collections\/' + [magicCookiesCollecton]);
     </script>
 {% endcase %}
