@@ -28,7 +28,10 @@ Here's a peek at the code inside the Snippet:
     <script type="text/javascript">
       var magicCookies = Cookies.noConflict();
       var magicCookiesCollecton = magicCookies.get('collection');
-      $('.continue-shopping').attr('href', '\/collections\/' + [magicCookiesCollecton]);
+      var magicCookiesTargetLinks = document.getElementsByClassName('continue-shopping');
+      for ( var i in magicCookiesTargetLinks )
+        if ( magicCookiesTargetLinks[i].className && magicCookiesTargetLinks[i].className.indexOf('continue-shopping') != -1 )
+          magicCookiesTargetLinks[i].href = ("\/collections\/") + magicCookiesCollecton;
     </script>
 {% endcase %}
 ```
