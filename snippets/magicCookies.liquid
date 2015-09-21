@@ -10,6 +10,9 @@
     <script type="text/javascript">
       var magicCookies = Cookies.noConflict();
       var magicCookiesCollecton = magicCookies.get('collection');
+      if (magicCookiesCollecton === undefined || magicCookiesCollecton === null) {
+        magicCookies.set('collection', 'all');
+      }
       var magicCookiesTargetLinks = document.getElementsByClassName('continue-shopping');
       for ( var i in magicCookiesTargetLinks )
         if ( magicCookiesTargetLinks[i].className && magicCookiesTargetLinks[i].className.indexOf('continue-shopping') != -1 )
