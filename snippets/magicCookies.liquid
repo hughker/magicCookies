@@ -15,8 +15,8 @@
         var magicCookiesCollecton = magicCookies.get('collection');
       }
       var magicCookiesTargetLinks = document.getElementsByClassName('continue-shopping');
-      for ( var i in magicCookiesTargetLinks ){
-        if ( magicCookiesTargetLinks[i].className && magicCookiesTargetLinks[i].className.indexOf('continue-shopping') != -1 ){
+      for ( var i in magicCookiesTargetLinks ) {
+        if ( magicCookiesTargetLinks[i].className && magicCookiesTargetLinks[i].className.indexOf('continue-shopping') != -1 ) {
           magicCookiesTargetLinks[i].href = ("\/collections\/") + magicCookiesCollecton;
         }
       }
