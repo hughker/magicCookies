@@ -17,7 +17,7 @@ Add `class="continue-shopping"` to relevant links in your `cart.liquid` Template
 Here's a peek at the code inside the Snippet:
 ```html
 {% case template %}
-  {% when 'collection' %}
+  {% when 'collection' or 'product' %}
     {{ 'js.cookie.min.js' | asset_url | script_tag }}
     <script type="text/javascript">
       var magicCookies = Cookies.noConflict();
@@ -28,10 +28,16 @@ Here's a peek at the code inside the Snippet:
     <script type="text/javascript">
       var magicCookies = Cookies.noConflict();
       var magicCookiesCollecton = magicCookies.get('collection');
+      if (magicCookiesCollecton === undefined || magicCookiesCollecton === null) {
+        magicCookies.set('collection', 'all');
+        var magicCookiesCollecton = magicCookies.get('collection');
+      }
       var magicCookiesTargetLinks = document.getElementsByClassName('continue-shopping');
-      for ( var i in magicCookiesTargetLinks )
-        if ( magicCookiesTargetLinks[i].className && magicCookiesTargetLinks[i].className.indexOf('continue-shopping') != -1 )
+      for ( var i in magicCookiesTargetLinks ) {
+        if ( magicCookiesTargetLinks[i].className && magicCookiesTargetLinks[i].className.indexOf('continue-shopping') != -1 ) {
           magicCookiesTargetLinks[i].href = ("\/collections\/") + magicCookiesCollecton;
+        }
+      }
     </script>
 {% endcase %}
 ```
