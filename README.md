@@ -20,17 +20,15 @@ Here's a peek at the code inside the Snippet:
   {% when 'collection' or 'product' %}
     {{ 'js.cookie.min.js' | asset_url | script_tag }}
     <script type="text/javascript">
-      var magicCookies = Cookies.noConflict();
-      magicCookies.set('collection', '{{ collection.handle }}');
+      Cookies.set('collection', '{{ collection.handle }}');
     </script>
   {% when 'cart' %}
     {{ 'js.cookie.min.js' | asset_url | script_tag }}
     <script type="text/javascript">
-      var magicCookies = Cookies.noConflict();
-      var magicCookiesCollecton = magicCookies.get('collection');
+      var magicCookiesCollecton = Cookies.get('collection');
       if (magicCookiesCollecton === undefined || magicCookiesCollecton === null) {
-        magicCookies.set('collection', 'all');
-        var magicCookiesCollecton = magicCookies.get('collection');
+        Cookies.set('collection', 'all');
+        var magicCookiesCollecton = Cookies.get('collection');
       }
       var magicCookiesTargetLinks = document.getElementsByClassName('continue-shopping');
       for ( var i in magicCookiesTargetLinks ) {
