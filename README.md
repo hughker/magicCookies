@@ -28,7 +28,7 @@ Here's a peek at the code inside the Snippet:
     <script type="text/javascript">
       var magicCookies = Cookies.noConflict();
       var magicCookiesCollecton = magicCookies.get('collection');
-      if (magicCookiesCollecton === undefined || magicCookiesCollecton === null) {
+      if (magicCookiesCollecton === undefined || magicCookiesCollecton === null || currentCollection === '') {
         magicCookies.set('collection', 'all');
         var magicCookiesCollecton = magicCookies.get('collection');
       }
