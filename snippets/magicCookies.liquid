@@ -1,9 +1,11 @@
 {% case template %}
   {% when 'collection' or 'product' %}
-    {{ 'js.cookie.min.js' | asset_url | script_tag }}
-    <script type="text/javascript">
-      Cookies.set('collection', '{{ collection.handle }}');
-    </script>
+    {% if collection %}
+      {{ 'js.cookie.min.js' | asset_url | script_tag }}
+      <script type="text/javascript">
+        Cookies.set('collection', '{{ collection.handle }}');
+      </script>
+    {% endif %}
   {% when 'cart' %}
     {{ 'js.cookie.min.js' | asset_url | script_tag }}
     <script type="text/javascript">
