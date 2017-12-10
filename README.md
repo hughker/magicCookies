@@ -25,15 +25,15 @@ Here's a peek at the code inside the Snippet:
   {% when 'cart' %}
     {{ 'js.cookie.min.js' | asset_url | script_tag }}
     <script type="text/javascript">
-      var magicCookiesCollecton = Cookies.get('collection');
-      if (magicCookiesCollecton === undefined || magicCookiesCollecton === null || magicCookiesCollecton === '') {
+      var magicCookiesCollection = Cookies.get('collection');
+      if (magicCookiesCollection === undefined || magicCookiesCollection === null || magicCookiesCollection === '') {
         Cookies.set('collection', 'all');
-        var magicCookiesCollecton = Cookies.get('collection');
+        var magicCookiesCollection = Cookies.get('collection');
       }
       var magicCookiesTargetLinks = document.getElementsByClassName('continue-shopping');
       for ( var i in magicCookiesTargetLinks ) {
         if ( magicCookiesTargetLinks[i].className && magicCookiesTargetLinks[i].className.indexOf('continue-shopping') != -1 ) {
-          magicCookiesTargetLinks[i].href = ("\/collections\/") + magicCookiesCollecton;
+          magicCookiesTargetLinks[i].href = ("\/collections\/") + magicCookiesCollection;
         }
       }
     </script>
