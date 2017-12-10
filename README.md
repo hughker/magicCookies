@@ -26,7 +26,7 @@ Here's a peek at the code inside the Snippet:
     {{ 'js.cookie.min.js' | asset_url | script_tag }}
     <script type="text/javascript">
       var magicCookiesCollecton = Cookies.get('collection');
-      if (magicCookiesCollecton === undefined || magicCookiesCollecton === null || currentCollection === '') {
+      if (magicCookiesCollecton === undefined || magicCookiesCollecton === null || magicCookiesCollecton === '') {
         Cookies.set('collection', 'all');
         var magicCookiesCollecton = Cookies.get('collection');
       }
